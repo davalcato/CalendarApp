@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import CalendarKit
 
-class ViewController: UIViewController {
+class CalendarViewController: DayViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // add title
+        title = "Calendar"
     }
 
 

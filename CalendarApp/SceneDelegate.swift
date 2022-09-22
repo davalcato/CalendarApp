@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // create new window
         window = UIWindow(windowScene: windowScene)
         // view controller that will display in window
-        let viewController = ViewController()
+        let viewController = CalendarViewController()
         // create navigation controller with root to pass to navigation
         let navigationController = UINavigationController(rootViewController: viewController)
         // set viewcontroller to be first scene in the window

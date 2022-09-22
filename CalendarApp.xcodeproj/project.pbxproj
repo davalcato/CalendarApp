@@ -9,16 +9,17 @@
 /* Begin PBXBuildFile section */
 		756AEA9D28DD0274007D6EFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756AEA9C28DD0274007D6EFE /* AppDelegate.swift */; };
 		756AEA9F28DD0274007D6EFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756AEA9E28DD0274007D6EFE /* SceneDelegate.swift */; };
-		756AEAA128DD0274007D6EFE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756AEAA028DD0274007D6EFE /* ViewController.swift */; };
+		756AEAA128DD0274007D6EFE /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756AEAA028DD0274007D6EFE /* CalendarViewController.swift */; };
 		756AEAA628DD027A007D6EFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 756AEAA528DD027A007D6EFE /* Assets.xcassets */; };
 		756AEAA928DD027A007D6EFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 756AEAA728DD027A007D6EFE /* LaunchScreen.storyboard */; };
+		75A5CBD328DD152500617720 /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = 75A5CBD228DD152500617720 /* CalendarKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		756AEA9928DD0274007D6EFE /* CalendarApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		756AEA9C28DD0274007D6EFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		756AEA9E28DD0274007D6EFE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		756AEAA028DD0274007D6EFE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		756AEAA028DD0274007D6EFE /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		756AEAA528DD027A007D6EFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		756AEAA828DD027A007D6EFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		756AEAAA28DD027A007D6EFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -29,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75A5CBD328DD152500617720 /* CalendarKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +58,7 @@
 			children = (
 				756AEA9C28DD0274007D6EFE /* AppDelegate.swift */,
 				756AEA9E28DD0274007D6EFE /* SceneDelegate.swift */,
-				756AEAA028DD0274007D6EFE /* ViewController.swift */,
+				756AEAA028DD0274007D6EFE /* CalendarViewController.swift */,
 				756AEAA528DD027A007D6EFE /* Assets.xcassets */,
 				756AEAA728DD027A007D6EFE /* LaunchScreen.storyboard */,
 				756AEAAA28DD027A007D6EFE /* Info.plist */,
@@ -80,6 +82,9 @@
 			dependencies = (
 			);
 			name = CalendarApp;
+			packageProductDependencies = (
+				75A5CBD228DD152500617720 /* CalendarKit */,
+			);
 			productName = CalendarApp;
 			productReference = 756AEA9928DD0274007D6EFE /* CalendarApp.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +113,9 @@
 				Base,
 			);
 			mainGroup = 756AEA9028DD0274007D6EFE;
+			packageReferences = (
+				75A5CBD128DD152500617720 /* XCRemoteSwiftPackageReference "CalendarKit" */,
+			);
 			productRefGroup = 756AEA9A28DD0274007D6EFE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -134,7 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				756AEAA128DD0274007D6EFE /* ViewController.swift in Sources */,
+				756AEAA128DD0274007D6EFE /* CalendarViewController.swift in Sources */,
 				756AEA9D28DD0274007D6EFE /* AppDelegate.swift in Sources */,
 				756AEA9F28DD0274007D6EFE /* SceneDelegate.swift in Sources */,
 			);
@@ -352,6 +360,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		75A5CBD128DD152500617720 /* XCRemoteSwiftPackageReference "CalendarKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/richardtop/CalendarKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		75A5CBD228DD152500617720 /* CalendarKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 75A5CBD128DD152500617720 /* XCRemoteSwiftPackageReference "CalendarKit" */;
+			productName = CalendarKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 756AEA9128DD0274007D6EFE /* Project object */;
 }
