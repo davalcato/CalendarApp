@@ -10,6 +10,7 @@ import CalendarKit
 import EventKit
 
 class CalendarViewController: DayViewController {
+    
     // create the event store
     private let eventStore = EKEventStore()
 
@@ -19,6 +20,8 @@ class CalendarViewController: DayViewController {
         title = "Calendar"
         // function reques
         requestAccessToCalendar()
+        // calling this method
+        subscribeToNotifications()
     }
     // function for access
     func requestAccessToCalendar() {
@@ -26,10 +29,28 @@ class CalendarViewController: DayViewController {
             to: .event) { success, error in
         }
     }
+    // subscribe to notifications
+    func subscribeToNotifications() {
+        // center that listens for events
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(storeChange(_:)),
+                                               name: .EKEventStoreChanged,
+                                               object: nil)
+        
+    }
+    // store change
+    @objc func storeChange(_ notification: Notification) {
+        // get notified when change occurs
+        reloadData()
+        
+    }
+    
+    
     // new events for date
     override func eventsForDate(_ date: Date) -> [EventDescriptor] {
         // fetch events with date range
         let startDate = date
+        // how of the difference in components
         var oneDayComponents = DateComponents()
         // the span of the dates
         oneDayComponents.day = 1
@@ -37,7 +58,10 @@ class CalendarViewController: DayViewController {
         let endDate = calendar.date(byAdding: oneDayComponents, to: startDate)!
         
         // fetch all the events from the beginning of startDate to end of date
-        let predicate = eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: nil)
+        let predicate = eventStore.predicateForEvents(
+            withStart: startDate,
+            end: endDate,
+            calendars: nil)
         
         // fetch from eventstore
         let eventKitEvents = eventStore.events(matching: predicate)
